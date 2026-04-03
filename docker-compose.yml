@@ -1,0 +1,13 @@
+services:
+  api-fussball:
+    build: .
+    image: api-fussball:latest
+    container_name: api-fussball
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DATA_DIR: "/data"
+    volumes:
+      - ./appdata:/data
